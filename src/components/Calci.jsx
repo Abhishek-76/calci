@@ -3,6 +3,21 @@ import React, { useState } from "react";
 const Calci = () => {
   const [val, setVal] = useState("");
 
+  const backspace = () => {
+    try {
+      setVal(val.slice(0, -1));
+    } catch (error) {
+      setVal("");
+    }
+  };
+
+  const calculate = () => {
+    try {
+      setVal(eval(val));
+    } catch (error) {
+      setVal("error");
+    }
+  };
   return (
     <div className="container">
       <div className="row">
@@ -21,6 +36,7 @@ const Calci = () => {
                 type="text"
                 className="form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow"
                 value={val}
+                onChange={(e) => setVal(e.target.value)}
               />{" "}
               <div className="row">
                 <div className="col-3">
@@ -53,8 +69,8 @@ const Calci = () => {
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow px-2 py-4 fs-4"
-                    value="1"
-                    onClick={(e) => setVal(val + e.target.value)}
+                    value="C"
+                    onClick={() => backspace()}
                   >
                     C/CE
                   </button>
@@ -91,7 +107,7 @@ const Calci = () => {
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow p-4 fs-4"
-                    value="1"
+                    value="+"
                     onClick={(e) => setVal(val + e.target.value)}
                   >
                     +
@@ -129,7 +145,7 @@ const Calci = () => {
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow p-4 fs-4"
-                    value="1"
+                    value="*"
                     onClick={(e) => setVal(val + e.target.value)}
                   >
                     X
@@ -140,7 +156,7 @@ const Calci = () => {
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow p-4 fs-4"
-                    value="1"
+                    value="."
                     onClick={(e) => setVal(val + e.target.value)}
                   >
                     .
@@ -157,17 +173,17 @@ const Calci = () => {
                 </div>
                 <div className="col-3">
                   <button
-                    className="btn btn-light text-primary shadow p-4 fs-4"
-                    value="3"
-                    onClick={(e) => setVal(val + e.target.value)}
+                    className="btn btn-light text-primary shadow  py-4 px-4 fs-4"
+                    value="="
+                    onClick={() => calculate()}
                   >
                     =
                   </button>
                 </div>
                 <div className="col-3">
                   <button
-                    className="btn btn-light text-primary shadow px-2 py-4 fs-4"
-                    value="1"
+                    className="btn btn-light text-primary shadow p-4 fs-4"
+                    value="/"
                     onClick={(e) => setVal(val + e.target.value)}
                   >
                     /
