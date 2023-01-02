@@ -19,8 +19,8 @@ const Calci = () => {
     }
   };
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container  mt-5">
+      <div className="row ">
         <div className="col-12">
           <h1 className="display-5 fw-bolder text-center text-primary">
             CALCULATOR
@@ -30,15 +30,15 @@ const Calci = () => {
       </div>
       <div className="row justify-content-center">
         <div className="col-md-4">
-          <div className="card border-primary mb-3">
-            <div className="card-body text-primary">
+          <div className="card  mb-3">
+            <div className="card-body shadow text-primary">
               <input
                 type="text"
                 className="form-control form-control-lg mb-4 text-center bg-light fs-4 text-primary shadow"
                 value={val}
                 onChange={(e) => setVal(e.target.value)}
               />{" "}
-              <div className="row">
+              <div className="row ">
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow p-4 fs-4"
@@ -76,7 +76,7 @@ const Calci = () => {
                   </button>
                 </div>
               </div>
-              <div className="row">
+              <div className="row mt-2">
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow p-4 fs-4"
@@ -114,7 +114,7 @@ const Calci = () => {
                   </button>
                 </div>
               </div>
-              <div className="row">
+              <div className="row mt-2">
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow p-4 fs-4"
@@ -152,7 +152,7 @@ const Calci = () => {
                   </button>
                 </div>
               </div>
-              <div className="row">
+              <div className="row mt-2">
                 <div className="col-3">
                   <button
                     className="btn btn-light text-primary shadow p-4 fs-4"
@@ -173,7 +173,7 @@ const Calci = () => {
                 </div>
                 <div className="col-3">
                   <button
-                    className="btn btn-light text-primary shadow  py-4 px-4 fs-4"
+                    className="btn btn-light text-primary shadow  p-4 fs-4"
                     value="="
                     onClick={() => calculate()}
                   >
